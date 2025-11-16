@@ -2,14 +2,16 @@ import pygame as pg
 import math as m
 import colorsys as csys
 zoom,zoom_r=1,14
-pg.display.set_caption("Toffee's Mandelbrot Set Explorer")
+pg.display.set_caption("DanDaDood-0319's Mandelbrot Set Explorer")
 s_w,s_h = 480,360
 s = pg.display.set_mode((s_w,s_h))
+run = True
+
 c_x, c_y = -0.8, 0
-m_vx,m_vy = 0,0
+m_vx, m_vy = 0, 0
 res = 5
 sqrt2, log10_2 = m.sqrt(2), m.log10(2)
-run = True
+
 def dist(x,y):
   return((x*x+y*y)**0.5)
 
@@ -17,13 +19,15 @@ def mandelbrot(z_r,z_i,p_r,p_i,c_r,c_i,r):
   z_rn, z_in = z_r, z_i
   for i in range(r):
     z_rn,z_in=(z_rn*z_rn)-(z_in*z_in)+c_r,(2*z_rn*z_in)+c_i
-    if dist(z_rn,z_in)>=2:
+    if dist(z_rn,z_in)>=3:
       return(((i+1)-(m.log10(m.log10(dist(z_rn,z_in)))/log10_2)))
   return(-1)
 
-def if(c)then(t)else(f)
-  if(c)
+def ifthenelse(c,t,f):
+  if(c):
     return(t)
+  else:
+    return(f)
   
 
 while run:
@@ -38,8 +42,7 @@ while run:
       if c_o == -1:
         c = (0,0,0)
       else:
-        c = tuple((x * 256)%256 for x in csys.hsv_to_rgb(c_o*0.015625,1,1))
-      print(c)
+        c = tuple(x*255%256 for x in csys.hsv_to_rgb(c_o*0.015625,1,1))
       pg.Surface.fill(s,c,(x,y,res,res))
       for event in pg.event.get():
         if event.type == pg.QUIT:
