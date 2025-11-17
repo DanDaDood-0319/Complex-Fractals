@@ -8,6 +8,7 @@ from pygame.locals import *
 import math as m
 import time as t
 import colorsys as csys
+import numpy as np
 
 pg.init()
 
@@ -21,11 +22,12 @@ run = True
 t_g =  0.1 # Goal FPS (will be ignored if frame finishes rendering before then)
 t_f  = t.time() + t_g
 
-c_x, c_y = -0.8, 0 # Camera x and y
+c_x, c_y = -0.75, 0 # Camera x and y
 m_vx, m_vy = 0, 0 # Camera velocity for drag-off
-res = 1 # How big each pixel is. Useful for efficient rendering, while not having to put your head close to see.
+res = 5 # How big each pixel is. Useful for efficient rendering, while not having to put your head close to see.
 sqrt2, log10_2 = m.sqrt(2), m.log10(2) # To avoid repeated calculations on a constant
 zoom, zoom_r = 1, 14 # starting zoom
+depth = 100
 
 # Defining for start tick
 s_wr = m.ceil(s_w/res)
@@ -101,7 +103,7 @@ while run:
   x, y = 0, 0
   for i in range(m.ceil(s_h/res)):
     for i_2 in range(s_wr):
-      c_o = mandelbrot(0,0,2,0,(((x + res_2) - s_w2)/(zoom)) + c_x,(((y + res_2) - s_h2) / zoom) + c_y,500)
+      c_o = mandelbrot(0,0,2,0,(((x + res_2) - s_w2)/(zoom)) + c_x,(((y + res_2) - s_h2) / zoom) + c_y,depth)
       if c_o == -1:
         c = (0,0,0)
       else:
@@ -116,6 +118,9 @@ while run:
             scroll = 1
           else:
             scroll = -1
+        if event.type == pg.KEYDOWN:
+          if event.key == pg.K_r:
+            c_x, c_y, zoom_r, scroll = -0.75, 0, 14, 0
       x+=res
     x=0
     y+=res
