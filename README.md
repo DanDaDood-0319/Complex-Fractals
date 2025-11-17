@@ -11,13 +11,19 @@ This requires [Python](http://python.org/) *(duh)* as well as the following libr
 ## How to...
 ### Run
 1. Get [Python](http://python.org/) *(this is a Python project)*
-2. Get all [dependencies](#dependencies) *(listed in the dependencies section ^^^)*
+2. Get all [dependencies](#dependencies) *(listed in the dependencies section)*
 3. Run [`complex_fractals.py`](/complex_fractals.py)
 4. Have fun!
 ### Use
 Hold and drag to move, and scroll to zoom. That's it! *(for now...)*
 ### Mod
-Everything is self-contained in the [`complex_fractals.py`](/complex_fractals.py) file. Just enter it with an editor such as [VSC](https://code.visualstudio.com/)/[VSCodium](https://vscodium.com/) *(my current editor)*, and do whatever. *(And somehow if you didn't realized, YOU NEED TO KNOW PYTHON TO MOD THIS.)*
+Everything is self-contained in the [`complex_fractals.py`](/complex_fractals.py) file. Just enter it with an editor such as [VSC](https://code.visualstudio.com/)/[VSCodium](https://vscodium.com/) *(my current editor)*, and do whatever. *(And if you somehow didn't realize, YOU NEED TO KNOW PYTHON TO MOD THIS.)*
+
+## Photos
+![](/photos/mandelbrot-0.png "Whole Mandelbrot")
+![](/photos/mandelbrot-1.png "Zoomed into Mandelbrot")
+![](/photos/mandelbrot-2.png "Straight Minibrot")
+![](/photos/mandelbrot-3.png "Diagonal Minibrot")
 
 ## Goals
 ### Part 1

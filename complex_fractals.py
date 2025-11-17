@@ -62,7 +62,6 @@ def tick():
 
   # Display update
   pg.display.update()
-  print(pg.key.get_mods())
   if pg.key.get_mods() == 4097:
     fast = 2
   elif pg.key.get_mods() == 4160:
