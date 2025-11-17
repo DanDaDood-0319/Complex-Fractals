@@ -59,7 +59,7 @@ Everything is self-contained in the [`complex_fractals.py`](/complex_fractals.py
 * I don't expect anyone to see this, but if you do, then **hi**!
 
 ## License
-**[GNU General Public License, Version 3.0](https://www.gnu.org/licenses/#GPL)**
+This project is licensed under ****[GNU General Public License, Version 3.0](https://www.gnu.org/licenses/#GPL)****.
 
   This is a complex fractal renderer. It renders complex fractals, such as the mandelbrot set.
     **Copyright (C) 2025  [DanDaDood-0319](https://github.com/DanDaDood-0319)**

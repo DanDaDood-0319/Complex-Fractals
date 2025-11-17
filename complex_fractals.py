@@ -1,3 +1,8 @@
+# This file is part of Complex-Fractals.
+# Copyright (C) 2025 DanDaDood-0319
+# Licensed under the GNU General Public License v3.0.
+# See <https://www.gnu.org/licenses/> for details.
+
 import pygame as pg
 from pygame.locals import *
 import math as m
